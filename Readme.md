@@ -4,7 +4,7 @@ A simple multi-page restaurant website built using **JavaScript modules** and **
 
 ## Live Demo
 
-[Click here to view the live site](https://your-netlify-link-or-github-pages.netlify.app)
+[Click here to view the live site](https://yashrtech.github.io/Restaurant-Page/)
 
 ## Features
 
@@ -18,12 +18,3 @@ A simple multi-page restaurant website built using **JavaScript modules** and **
 - Using `import`/`export` modules in JavaScript
 - DOM manipulation
 - Project structure and code organization
-
-
-## Getting Started
-
-### Clone the Repo
-
-```bash
-git clone https://github.com/YashRTech/restaurant-page.git
-cd restaurant-page
