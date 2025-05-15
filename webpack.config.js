@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/index.js",
   output: {
     filename: "main.js",
@@ -11,7 +11,10 @@ module.exports = {
   },
   devtool: "eval-source-map",
   devServer: {
+    static: "./dist",
     watchFiles: ["./src/template.html"],
+    open: true,
+    port: 8080,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -30,7 +33,7 @@ module.exports = {
         loader: "html-loader",
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(webp|svg)$/i,
         type: "asset/resource",
       },
     ],

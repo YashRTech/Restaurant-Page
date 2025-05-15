@@ -1,10 +1,48 @@
-import "./styles.css"
-import asus from "./assests/asus.jpg";
-import { hello } from "./hello.js";
+import "./styles.css";
+import loadHome from "./home.js";
+import loadAbout from "./about.js";
+import loadMenu from "./menu.js";
+import loadNavbar from "./navbar.js";
 
-console.log(hello);
+const content = document.querySelector("#content");
+const nav = document.querySelector("nav");
 
-const image = document.createElement("img");
-image.src = asus;
-   
-document.body.appendChild(image);
+loadNavbar();
+
+// Default value
+content.innerHTML = "";
+content.appendChild(loadHome());
+
+
+nav.addEventListener("click", (e) => {
+    const btns = document.querySelectorAll(".btn");
+
+  if (e.target.textContent === "Home") {
+    content.innerHTML = "";
+    content.appendChild(loadHome());
+
+    // Removing active from all other btns
+    btns.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+    e.target.classList.add("active");
+  }
+  if (e.target.textContent === "About") {
+    content.innerHTML = "";
+    content.appendChild(loadAbout());
+
+    btns.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+    e.target.classList.add("active");
+  }
+  if (e.target.textContent === "Menu") {
+    content.innerHTML = "";
+    content.appendChild(loadMenu());
+
+    btns.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+    e.target.classList.add("active");
+  }
+});
